@@ -1,0 +1,81 @@
+/* CSS영역 (스타일정보 바로 기입) */
+
+/* 1. 속성 선택자---------------------------*/
+
+/* div중 name 속성값이 name1과 "일치"하는 요소*/
+div[name=name1]{
+    background-color: orangered;
+}
+
+/* div중 name 속성값에 name1이 "포함"되어 있는 요소(단어로써)*/
+div[name~=name1]{
+    background-color: yellow;
+}
+
+/* div중 class 속성값이 div로 "시작"하는 요소(-앞에 한 단어로써)*/
+div[class|=div]{
+    background-color: cyan;
+}
+
+/* div중 name속성값이 na로 "시작"되는 요소 */
+div[name^=na]{
+    color: blue;
+}
+
+/* div중 class속성값이 ss로 "끝"나는 요소*/
+div[class$=ss]{
+    color: white;
+}
+
+/* div중 class속성값에 i가 "포함"되어있는 요소 */
+div[class*=i]{
+    background-color: yellow;
+    color: yellowgreen;
+}
+
+/* 
+class 속성값이 div-class인 애들 중 name속성값에 name3가 단어로써 포함되어있는 요소를 선택한 후
+배경색을 핑크색으로 바꾸시오.
+*/
+.div-class[name~=name3]{
+    background-color: pink;
+}
+
+div[class=div-class][name~=name3]{
+    background-color: pink;
+}
+
+/* 2. 자손, 후손 선택자 ----------------------------- */
+/* a>b : a요소의 자손들 중 b요소만 선택 */
+#test1>h4{
+    background-color: burlywood;
+}
+
+#test1>ul>li{
+    background-color: grey;
+}
+/* a b : a요소의 후손(모든 하위요소)들 중 b요소만을 선택하는 선택자*/
+#test1 li{
+    color: royalblue;
+    background-color: darkseagreen;
+}
+#test1 h4{
+    color: deeppink;
+}
+
+/* 3. 동위 선택자 -------------------------------- */
+/* a+b : a요소 바로 뒤에 b요소 하나만을 선택*/
+#test2+div{
+    background-color: thistle;
+}
+#test2+ul{
+    background-color: rosybrown;
+    /* 바로뒤에 있는 요소가 아니기때문에 반영되지 않음 */
+}
+/* a~b : a요소 뒤에 있는 모든 b요소 다 선택*/
+#test2~div{
+    /* background-color: green; */
+}
+#test2~ul{
+    /* background-color: deepskyblue; */
+}
