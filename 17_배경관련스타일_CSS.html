@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 관련 스타일</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        #div-bg{
+            background-color: white;
+            border: 30px dashed blue;
+            padding: 20px;
+            width: 50%;
+            /* div의 content의 가로길이는 부모(body)요소의 50%로 지정하겠다.*/
+            box-sizing: border-box;
+            /* 가로길이를 border까지 포함해서 지정하겠다 라는 뜻.*/
+        }
+        .div-test{
+            margin: 30px;
+            border: 10px dashed;
+            padding: 20px;
+            background-color: yellow;
+        }
+        #div1{
+            background-clip: border-box; /* 기본값 */
+        }
+        #div2{
+            background-clip: padding-box;
+        }
+        #div3{
+            background-clip: content-box;
+        }
+
+        #bg-img{
+            border: 1px solid black;
+            width: 70%;
+            height: 800px;
+
+            background-image: url("resources/image/bono.jpg");
+            background-repeat: repeat-y; /* 이미지가 세로로만 반복됨 */
+            background-size: contain; /* 가로 세로 상관없이 둘중에 하나가 가득 할 때까지 맞춰줌*/
+            background-position: 50% 50%; /* center center 또는 50px 50px */
+            background-attachment: fixed; /* 스크롤 이동이 있어도 그자리 그대로 고정 */
+        }
+    </style>
+</head>
+<body>
+    <h1>배경 관련 스타일(background~)</h1>
+
+    <h3>background-color : 배경색을 지정하고자 할 때 사용</h3>
+    <div id="div-bg">
+        청춘은 역사를 황금시대를 풍부하게 곳으로 아니다. 속에서 이상, 되는 가슴에 희망의 온갖 것이다. 이상을 이상의 위하여 속에 대고, 것이다. 싹이 그들은 너의 봄바람을 철환하였는가? 산야에 설산에서 무엇을 풀이 없으면 뼈 할지라도 아름다우냐? 그들은 사랑의 오아이스도 옷을 찾아다녀도, 열락의 생의 뭇 피가 것이다. 거선의 어디 행복스럽고 말이다. 피가 그러므로 이는 용기가 모래뿐일 부패뿐이다. 트고, 별과 얼마나 그들은 관현악이며, 피고, 온갖 피다. 보이는 생생하며, 이것이야말로 청춘 희망의 우리의 보이는 쓸쓸하랴? 얼음이 원질이 따뜻한 풍부하게 무엇을 있으며, 이상의 사막이다.
+    </div>
+
+    <br>
+
+    <h3>background-clip : 배경을 적용시키고자 하는 범위로 지정할 때 사용</h3>
+    <pre>
+        선택자 {
+            background-clip : border-box(기본값)/padding-box/content-box;
+        }
+    </pre>
+
+    <div class="div-test" id="div1">
+        청춘은 역사를 황금시대를 풍부하게 곳으로 아니다. 속에서 이상, 되는 가슴에 희망의 온갖 것이다. 이상을 이상의 위하여 속에 대고, 것이다. 싹이 그들은 너의 봄바람을 철환하였는가? 산야에 설산에서 무엇을 풀이 없으면 뼈 할지라도 아름다우냐? 그들은 사랑의 오아이스도 옷을 찾아다녀도, 열락의 생의 뭇 피가 것이다. 거선의 어디 행복스럽고 말이다. 피가 그러므로 이는 용기가 모래뿐일 부패뿐이다. 트고, 별과 얼마나 그들은 관현악이며, 피고, 온갖 피다. 보이는 생생하며, 이것이야말로 청춘 희망의 우리의 보이는 쓸쓸하랴? 얼음이 원질이 따뜻한 풍부하게 무엇을 있으며, 이상의 사막이다.
+    </div>
+    <div class="div-test" id="div2">
+        청춘은 역사를 황금시대를 풍부하게 곳으로 아니다. 속에서 이상, 되는 가슴에 희망의 온갖 것이다. 이상을 이상의 위하여 속에 대고, 것이다. 싹이 그들은 너의 봄바람을 철환하였는가? 산야에 설산에서 무엇을 풀이 없으면 뼈 할지라도 아름다우냐? 그들은 사랑의 오아이스도 옷을 찾아다녀도, 열락의 생의 뭇 피가 것이다. 거선의 어디 행복스럽고 말이다. 피가 그러므로 이는 용기가 모래뿐일 부패뿐이다. 트고, 별과 얼마나 그들은 관현악이며, 피고, 온갖 피다. 보이는 생생하며, 이것이야말로 청춘 희망의 우리의 보이는 쓸쓸하랴? 얼음이 원질이 따뜻한 풍부하게 무엇을 있으며, 이상의 사막이다.
+    </div>
+    <div class="div-test" id="div3">
+        청춘은 역사를 황금시대를 풍부하게 곳으로 아니다. 속에서 이상, 되는 가슴에 희망의 온갖 것이다. 이상을 이상의 위하여 속에 대고, 것이다. 싹이 그들은 너의 봄바람을 철환하였는가? 산야에 설산에서 무엇을 풀이 없으면 뼈 할지라도 아름다우냐? 그들은 사랑의 오아이스도 옷을 찾아다녀도, 열락의 생의 뭇 피가 것이다. 거선의 어디 행복스럽고 말이다. 피가 그러므로 이는 용기가 모래뿐일 부패뿐이다. 트고, 별과 얼마나 그들은 관현악이며, 피고, 온갖 피다. 보이는 생생하며, 이것이야말로 청춘 희망의 우리의 보이는 쓸쓸하랴? 얼음이 원질이 따뜻한 풍부하게 무엇을 있으며, 이상의 사막이다.
+    </div>
+
+    <h3>배경 이미지 테스트</h3>
+    <pre>
+        선택자 {
+            background-image : url(이미지경로);
+            background-repeat : repeat/repeat-x/repeat-y/no-repeat;
+            background-size : auto/contain/cover/px px/%;
+            background-position : 좌/우/가운데중하나 위/아래/가운데중하나 px/% %;
+            background-attachment : scroll/fixed;
+        }
+    </pre>
+
+    <div id="bg-img"></div>
+
+</body>
+</html>
