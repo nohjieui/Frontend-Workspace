@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체2</title>
+    <style>
+        .area{
+            background: lightblue;
+            border: 1px solid black;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>객체2</h1>
+    <h3>* 객체 배열을 사용한 다량의 데이터 관리</h3>
+
+    <button onclick="test1();">실행확인</button>
+    <div id="area1" class="area"></div>
+    <script>
+        function test1(){
+            let student0 = {name:"김갑생",java:100,oracle:90,html:90,css:60};
+            let student1 = {name:"김유신",java:80,oracle:40,html:90,css:60};
+            let student2 = {name:"홍길동",java:55,oracle:90,html:50,css:70};
+            let student3 = {name:"나훈아",java:77,oracle:56,html:90,css:60}; // 객체생성
+
+            let students = []; // 배열 생성
+
+            students.push(student0);
+            students.push(student1);
+            students.push(student2);
+            students.push(student3); // students 배열에 push 메서드로 객체 추가
+
+            for(let student of students){ // 배열의 향상된 반복문 -> 배열명 student
+                student.javascript = 100; // 객체 속성 추가
+                student.getSum = function(){
+                    return this.java + this.oracle + this.html + this.css + this.javascript;
+                }
+                student.getAvg = function(){
+                    return this.getSum()/5;
+                }
+            }
+            console.log(students); // 객체 값들 확인
+
+            let area1 = document.getElementById("area1");
+
+            for(let student of students){
+                with(student){
+                    area1.innerHTML += "이름 : "+name
+                                    + ", 총점 : "+getSum()
+                                    + ", 평균 : "+getAvg()+"<br>";
+                }
+            }
+        }
+    </script>
+
+    <hr>
+
+    <h3>* 생성자 함수</h3>
+    <p>
+        new 키워드를 사용해서 객체를 생성할 수 있는 함수를 의미(함수명 제시시 첫글자를 대문자로)
+    </p>
+    
+    <button onclick="test2();">실행확인</button>
+    <div id="area2" class="area"></div>
+
+    <script> 
+        // 생성자 함수 -> 매개변수 있는 함수
+        function Student(name, java, oracle, html, css, javascript){
+            // let this = {}; -> 눈에 보이지 않지만 빈 객체가 추가되어 있다.
+
+            // 일반 속성 정의(자바로 따지면 필드?)
+            this.name = name;
+            this.java = java;
+            this.oracle = oracle;
+            this.html = html;
+            this.css = css;
+            this.javascript = javascript;
+
+            // 메소드 속성 정의 ->  속성값으로 함수가 들어감
+            this.getSum = function(){
+                return this.java + this.oracle + this.html + this.css + this.javascript;
+            }
+
+            this.getAvg = function(){
+                return this.getSum() / 5;
+            }
+
+            this.toString = function(){
+                return "이름 : "+this.name + ", 총점 : "+this.getSum() +", 평균 : "+this.getAvg();
+            }
+
+            // return this; -> 눈에 보이지 않지만 return 생략되어 있음
+        }
+        function test2(){
+            let student0 = new Student('홍길동',100,80,40,50,30);
+            let student1 = new Student('김유신',80,70,60,50,90);
+            let student2 = new Student('김갑생',80,60,20,100,50);
+
+            console.log(student0);
+
+            let students = [student0, student1, student2]; // 배열 생성과 동시에 초기화
+
+            for(let student of students){
+                document.getElementById("area2").innerHTML += student.toString()+"<br>";
+            }
+        }
+    </script>
+
+    <hr>
+    <h3>* Date 내장객체</h3>
+
+    <button onclick="test3()">실행확인</button>
+    <div id="area3" class="area"></div>
+    <script>
+        function test3(){
+            let area3 = document.getElementById("area3");
+
+            let date1 = new Date(); // 매개변수가 없다면 현재 날짜 및 시간 반환
+
+            area3.innerHTML += "현재시간 : "+date1+"<br>";
+            
+            let date2 = new Date(2022, 11-1, 4); // 2022년 11월 4일로 셋팅
+            // 월의 경우 내부적으로 +1이 적용되기 때문에 (해당 월-1)을 해줘야함
+            area3.innerHTML += " 2022년 11월 4일 : "+date2+"<br>";
+
+            let date3 = new Date(2022, 11-1, 4, 9, 0, 30, 500); // 2022년 11월 4일로 9시 0분 30초 500ms(1s = 1000ms)
+            area3.innerHTML += " 2022년 11월 4일 9시 0분 30.5초 : "+date3+"<br>";
+
+            // 년도만 알아내고 싶을 때
+            area3.innerHTML += "년도 : "+date1.getFullYear()+"<br>";
+            // 월만 알아내고 싶을 때 -> +1을 해줘야함(1월 == 0)
+            area3.innerHTML += "월 : "+(date1.getMonth()+1)+"<br>";
+            // 일만 알아내고 싶을 때
+            area3.innerHTML += "일 : "+date1.getDate()+"<br>";
+            // 요일 : getDay() , 시 : getHours() , 분 : getMinutes() , 초 : getSeconds()
+
+            // 종강일 디데이 구하기
+            let now = new Date(); // 현재 날짜
+            let end = new Date(2023, 6-1, 20); // 종강날짜
+            area3.innerHTML += "종강일 디데이 : "+ (end-now)+"<br>";
+            // 현재 날짜로부터 종강일까지 몇 "밀리세컨초가 남았는지 알려주고 있다"
+            
+            // 1s = 1000ms
+            // 1m = 60s
+            // 1h = 60m
+            // 1d = 24h -> 24 * 60 * 60 * 1000
+            let dday = (end-now) / (24 * 60 * 60 * 1000);
+            area3.innerHTML += "종강일 d-day : "+ Math.ceil(dday);
+        }
+    </script>
+</body>
+</html>

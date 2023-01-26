@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 폼</title>
+    <style>
+        .area{
+            border: 1px solid gray;
+            padding: 20px;
+        }
+        .lb{
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="area">
+            * 아이디 : <input type="text" name="userId" id="userId" required><br>
+            <label class="lb">첫글자는 반드시 영문자로, 그리고 영문자, 숫자를 포함하여 총 4~12자로 입력하시오.</label>
+            <br><br>
+            * 비밀번호 : <input type="password" name="userPwd" id="userPwd" required> <br>
+            <label class="lb">영문자, 숫자, 특수문자(!@#$%^)로 총 8~15글자로 입력하시오.</label>
+            <br><br>
+            * 비밀번호 확인 : <input type="password" name="checkPwd" id="checkPwd" required><br>
+            <label class="lb">위의 비밀번호와 일치하게 입력하시오.</label>
+            <br><br>
+            * 이름 : <input type="text" name="userName" id="userName" required><br>
+            <label class="lb">한글로만 이루어져야하며 2글자 이상으로 입력하시오.</label>
+            <br><br>
+            * 이메일 : <input type="text" name="email" id="email"><br>
+            <label class="lb">이메일 형식에 맞춰서 입력하시오.</label>
+            <br><br>
+            * 취미 : <input type="text" name="hobby" id="hobby" placeholder="축구, 농구, 야구, 독서 등" list="hobbylist">
+            <datalist id="hobbylist">
+                <option value="soccer">축구</option>
+                <option value="basketball">농구</option>
+                <option value="baseball">야구</option>
+                <option value="reading">독서</option>
+            </datalist>
+            <br><br>
+            * 거주지 :
+            <select name="address" id="address ">
+                <option value="seoul">서울</option>
+                <option value="gyeonggi">경기</option>
+                <option value="Incheon">인천</option>
+            </select>
+            <br><br>
+
+            <input type="submit" value="회원가입" onclick="return validate();">
+            <input type="reset" value="취소">
+        </div>
+    </form>
+    <script>
+        function validate(){
+            let userId = document.getElementById("userId").value;
+            let userPwd = document.getElementById("userPwd").value;
+            let checkPwd = document.getElementById("checkPwd").value;
+            let userName = document.getElementById("userName").value;
+
+            let regExpId = /^[a-zA-Z]\w{3,11}$/;
+            if(!regExpId.test(userId)){
+                alert("유효한 아이디가 아닙니다. 다시 입력해주세요.");
+                document.getElementById("userId").select();
+                return false;
+            }
+
+            let regExpPwd = /^[0-9a-zA-Z!@#$%^]{8,15}$/;
+            if(!regExpPwd.test(userPwd)){
+                alert("유효한 비밀번호를 입력해주세요");
+                userPwd = "";
+                userPwd.select();
+                return false;
+            }
+            if(userPwd != checkPwd){
+                alert("비밀번호가 일치하지 않습니다");
+                document.getElementById("userPwd").select();
+                return false;
+            }
+
+            let regExpName = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,}$/;
+            if(!regExpName.test(userName)){
+                alert("이름 조건이 일치하지 않습니다.")
+                document.getElementById("userName").select();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

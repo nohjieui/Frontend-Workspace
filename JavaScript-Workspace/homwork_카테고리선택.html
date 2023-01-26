@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>책 카테고리 선택</title>
+    <style>
+        #area{
+            border: 1px solid red;
+            width: 700px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practice1</h1>
+
+    <fieldset>
+        <legend>취미</legend>
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" id="selectAll" onclick="selectAll();">
+                    <label for="selectAll">전체선택</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="종합" id="total">
+                    <label for="total">종합</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="소설" id="novel">
+                    <label for="novel">소설</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="시/에세이" id="essay">
+                    <label for="essay">시/에세이</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="경제/경영" id="economy">
+                    <label for="economy">경제/경영</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="자기계발" id="self">
+                    <label for="self">자기계발</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="아동" id="child">
+                    <label for="child">아동</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="hobby" value="여행" id="travel">
+                    <label for="travel">여행</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="과학" id="science">
+                    <label for="science">과학</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="역사/문화" id="history">
+                    <label for="history">역사/문화</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="외국어" id="foreign">
+                    <label for="foreign">외국어</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="컴퓨터" id="computer">
+                    <label for="computer">컴퓨터</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="만화" id="cartoon">
+                    <label for="cartoon">만화</label>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <br>
+
+    <button onclick="category();">카테고리 선택</button>
+    <div id="area"></div>
+
+    <script>
+        
+        // 1번 기능 : 체크 박스 선택 후 “카테고리 선택“을 누르면 하단 네모에 선택한 카테고리 출력
+        function category(){
+            // 내가 선택한(checked) 체크박스의 value 값들을 div태그중 아이디값이 area인 요소에 안쪽(innerHTML)에 출력.
+            let checkedList = document.querySelectorAll("input[type=checkbox]:checked");
+            
+            // console.log(checkedList);
+
+            let area = document.getElementById("area");
+
+            // 방법 1.
+            // checkedList.forEach(function(item,index,array){
+            //     area.innerHTML += item.value + " ";
+            // })
+
+            // 방법 2.
+            for(let i = 0; i < checkedList.length; i++){
+                area.innerHTML += checkedList[i].value + " ";
+
+            }
+        }
+
+        // 2번 기능 : “전체 선택“ 체크 박스 선택 시 모든 카테고리가 선택 되며, 선택 해제 시 모두 선택 해제
+        function selectAll(){
+            let check = document.getElementById("selectAll").checked; // 체크박스에서 선택된 상태라면 true / 그렇지 않으면 false
+
+            let categorys = document.getElementsByName("hobby");
+
+            for(let i = 0; i<categorys.length; i++){
+                categorys[i].checked = check;
+            }
+        }
+
+        // 3번 기능 : 하나라도 선택이 되어있지 않으면 “전체 선택“ 체크 박스는 선택 해제
+        let categorys = document.getElementsByName("hobby");
+
+        for(let i = 0; i<categorys.length; i++){
+            categorys[i].onclick = function(){
+
+                let checkedListLength = document.querySelectorAll("input[name=hobby]:checked").length;
+                // 선택된 체크박스 길이 == 전체 체크박스 길이(전체선택 제외 12)
+                if(checkedListLength == categorys.length){
+                    document.getElementById("selectAll").checked = true;
+                }else{
+                    document.getElementById("selectAll").checked = false;
+                }
+
+                // alert(i+"번째 체크박스 클릭됨"); -> test 해본 것
+            }
+        }
+
+    </script>
+
+</body>
+</html>
