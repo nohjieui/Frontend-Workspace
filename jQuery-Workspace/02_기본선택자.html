@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본선택자</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>기본 선택자</h1>
+    <h3>* 아이디 선택자</h3>
+    <p>
+        특정 고유한 아이디값을 가진 요소 하나만 선택하고자 할때
+    </p>
+    <script>
+        $(document).ready(function(){
+            // 순수 자바스크립트 방식 => document.getElementById("아이디명");
+            //                         document.querySelector("#아이디명");
+            // 선택된 요소 객체의 속성에 접근해서 값을 변경
+            document.getElementById("id1").style.color = "red";
+            document.querySelector("#id2").innerHTML = "h1으로 변경"
+        });
+        
+    </script>
+    <h1 id="id1">ID1</h1>
+    <h1 id="id2">ID2</h1>
+</body>
+</html>
