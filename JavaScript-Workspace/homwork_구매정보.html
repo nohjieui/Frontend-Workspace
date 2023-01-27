@@ -21,28 +21,39 @@
             <ul>
                 <li>구매자 : <input type="text" id="user" name="buy" placeholder="구매자의 이름을 입력하세요"></li>
                 <li>상품명 : <input type="text" name="buy" placeholder="구매 상품명을 입력하세요"></li>
-                <li>가격 : <input type="text"  name="buy" placeholder="구매 가격을 입력하세요"></li>
+                <li>가격 : <input type="number"  name="buy" placeholder="구매 가격을 입력하세요"></li>
                 <li>구매수량 : <input type="number" name="buy" min="10" max="100" step="10" placeholder="최소 10, 최대 100"></li>
                 <li>납품 등급 : <input type="range" name="buy" min="1" max="9" step="2" value="0"></li>
                 <li>기타 사항 : <textarea name="buy" cols="35" rows="6"></textarea></li>
             </ul>
         </fieldset>
     </form>
-    
     <br>
     <button onclick="print();">입력 값 출력하기</button>
     <br><br>
     <div id="area1" class="area"></div>
     <script>
         function print(){
+            // 방법1
+            // let area1 = document.getElementById("area1");
+            
+            // let buy = document.getElementsByName("buy");
+            
+            // let arr = ["구매자명 : ", "상품명 : ", "가격 : ", "구매 수량 : ", "납품등급 : ", "기타사항 : "];
+            // for(let i = 0; i<buy.length; i++){
+            //     area1.innerHTML += arr[i]+buy[i].value+"<br>";
+            // }
+            
+            // 방법2
+            let inputs = document.getElementsByTagName("input");
+            
             let area1 = document.getElementById("area1");
-
-            let buy = document.getElementsByName("buy");
-
-            let arr = ["구매자명 : ", "상품명 : ", "가격 : ", "구매 수량 : ", "납품등급 : ", "기타사항 : "];
-            for(let i = 0; i<buy.length; i++){
-                area1.innerHTML += arr[i]+buy[i].value+"<br>";
-            }
+            area1.innerHTML += "구매자명 : "+inputs[0].value+"님 <br>"
+                             + "상품명 : "+inputs[1].value+"<br>"
+                             + "가격 : "+inputs[2].value+"만원 <br>"
+                             + "구매수량 : "+inputs[3].value+"개 <br>"
+                             + "납품등급 : "+inputs[4].value+"등급<br>"
+                             + "기타사항 : "+document.getElementsByTagName("textarea")[0].value;
         }
     </script>
 </body>

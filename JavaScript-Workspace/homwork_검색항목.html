@@ -10,15 +10,14 @@
             width: 400px;
             height: 80px;
         }
-        .box{
+        div{
             background-color: lightgoldenrodyellow;
             width: 450px;
-            height: 80px;
-            position: relative;
+            height: 60px;
+            padding: 15px;
+            display: none;
         }
-
         #search{
-            position: absolute;
             margin: auto;
             top: 0;
             left: 0;
@@ -33,48 +32,58 @@
 </head>
 <body>
     <h1>Practice5</h1>
-    <form action="">
-        <fieldset class="a">
-            <legend >검색할 항목을 선택하세요.</legend>
-            <div>
-                <input type="radio" id="title" name="search" onclick="btn();">
-                <label for="title">제목</label>
-                <input type="radio" id="date" name="search" onclick="btn();">
-                <label for="date">날짜</label>
-                <input type="radio" id="name" name="search" onclick="btn();">
-                <label for="name">작성자</label>
-            </div>
-        </fieldset>
-    </form>
+
+    <fieldset class="a">
+        <legend >검색할 항목을 선택하세요.</legend>
+        <input type="radio" id="title" name="search">
+        <label for="title">제목</label>
+        <input type="radio" id="date" name="search">
+        <label for="date">날짜</label>
+        <input type="radio" id="name" name="search">
+        <label for="name">작성자</label>
+    </fieldset>
+
     <br>
 
-    <div class="box" class="titleBox">
+    <div>
         검색할 제목을 입력하세요 : <br>
-        <input type="search" size="50"> &nbsp;
-        <input type="submit" value="검색">
+        <input type="search" size="50">
+        <button type="button">검색</button>
     </div>
-
-    <div class="box" id="dateBox">
+    
+    <div>
         검색할 날짜를 선택하세요 : <br>
         <input type="date" size="40"> - 
         <input type="date" size="40">
-        <input type="button" value="검색"> &nbsp;
+        <button type="button">검색</button>
+    </div>
+    
+    <div>
+        검색할 작성자 아이디를 입력하세요 : <br>
+        <input type="text" size="20">
+        <button type="button">검색</button>
     </div>
 
-
     <script>
-        function btn(){
-            let tag = document.getElementsByClassName("box");
+        let searchs = document.getElementsByName("search");
+        let divs = document.getElementsByTagName("div");
 
-            // for(let i = 0; i < tag.length; i++){
-            //     if(){
-            //         tag[i].style.display = "block";
-            //     } else{
-            //         tag[i].style.display = "none";
-            //     }
-            // }
+        searchs.forEach(function(item, index){
+            item.addEventListener('change', function(){
 
-        }
+                for(let e of divs){
+                    e.style.display = "none";
+                }
+
+                if(this.id == 'title'){
+                    divs[0].style.display = "block";
+                } else if(this.id == 'date'){
+                    divs[1].style.display = "block";
+                }else if(this.id == 'name'){
+                    divs[2].style.display = "block";
+                }
+            })
+        });
     </script>
 </body>
 </html>
