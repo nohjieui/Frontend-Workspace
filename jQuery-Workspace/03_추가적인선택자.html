@@ -178,8 +178,16 @@
             // });
             
             // checkbox인 요소들에 change 이벤트 부여
+            // $(":checkbox").change(function(){
+            //     if($(this).prop("checked")){ // if(this.checked)
+            //         $(this).css({width:"50px", height:"50px"});
+            //     }else{
+            //         $(this).css({width:"", height:""});
+            //     }
+            // });
             $(":checkbox").change(function(){
-                if($(this).prop("checked")){ // if(this.checked)
+                console.dir(this);
+                if($(this).attr("checked")){
                     $(this).css({width:"50px", height:"50px"});
                 }else{
                     $(this).css({width:"", height:""});
