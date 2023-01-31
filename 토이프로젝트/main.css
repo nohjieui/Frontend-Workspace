@@ -1,0 +1,11 @@
+div{
+    border: 1px solid red;
+    font-family: Poppins, sans-serif !important;
+}
+.wrap{
+    width: 100%;
+    height: 3873px;
+}
+#main{
+    height: 3336px;
+}

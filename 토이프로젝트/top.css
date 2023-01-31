@@ -1,0 +1,27 @@
+#top{
+    height: 120px;
+    box-sizing: border-box;
+    margin: 0px 135px;
+    font-size: 20px;
+    font-weight: 800;
+}
+#top>div{
+    box-sizing: border-box;
+    margin: auto;
+    height: 100%;
+    float: left;
+}
+#top_left{
+    width: 10%;
+}
+#top_center{
+    width: 70%;
+    display: flex;
+}
+#top_center>div{
+    justify-content: flex-start;
+    padding: 50px 30px 0px;
+}
+#top_right{
+    width: 20%;
+}

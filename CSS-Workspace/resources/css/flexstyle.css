@@ -15,7 +15,7 @@ div{
 }
 
 .justify-content-test{
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .flex-direction-test{
