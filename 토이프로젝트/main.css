@@ -1,6 +1,6 @@
 
 div{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* font-family: Poppins, sans-serif !important; */
 }
 a{text-decoration: none;}
@@ -11,14 +11,41 @@ a{text-decoration: none;}
     margin: auto;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
+#main *{font-family: 'Spoqa Han Sans Neo', 'sans-serif';}
+h3{font-size: 22px; font-weight: 700;}
+h5{font-size: 16px; font-weight: 500; margin: 0;}
+/* radio 크기 및 위치 조정 */
+input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+.check_radio{margin-top: 20px;}
+.radio>input{vertical-align: middle; margin-right: 6px;}
+.radio>span{vertical-align: middle; margin-right: 50px;}
+.radio>button{vertical-align: middle;}
+/* checkbox 크기 및 위치 조정 */
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+.checkbox{margin-top: 20px;}
+.checkbox_ck>input{vertical-align: middle; margin-right: 6px;}
+.checkbox_ck>span{vertical-align: middle; margin-right: 30px;}
+.checkbox_ck>button{vertical-align: middle;}
 
 /* ------------------------------main_title------------------------------ */
 #main_title{
     margin-top: 100px;
+    margin-bottom: 0px;
     height: 85px;
     font-size: 40px;
 }
-#main_title>p{font-size: 18px;}
+#main>p{
+    font-size: 18px;
+    margin: 0;
+}
 
 /* ------------------------------main1------------------------------ */
 #main_1{
@@ -28,7 +55,6 @@ a{text-decoration: none;}
     border-bottom: 4px solid #222;
 }
 #main_1>p{margin: 0;}
-#main_1_l{font-size: 22px; font-weight: 700;}
 #main_1_r{font-size: 14px; line-height: 40px;}
 
 /* ------------------------------main2------------------------------ */
@@ -36,64 +62,84 @@ a{text-decoration: none;}
     /* border: 1px solid green; */
     box-sizing: border-box;
 }
-#main_2>table>tbody{
+#main_2>table{
     box-sizing: border-box;
+    border-collapse: collapse;
 }
 #main_2>table>tbody>tr{border-bottom: 1.5px solid #eee;}
-#main_2>table>tbody>tr>th{
-    /* background-color: red; */
+#main_2>table>tbody>tr>th{   
     width: 220px;
     text-align: left;
-    border-bottom: 1.5px solid #eee;
     font-size: 16px;
     font-weight: 500;
+    padding: 24px 0;
+    vertical-align: top;
 }
 #main_2>table>tbody>tr>td{
     /* background-color: green; */
     width: 1144px;
-    border-bottom: 1.5px solid #eee;
+    padding: 24px 0;
 }
 #main_2 input,select{
     font-size: 16px;
     border: 1px solid #ccc;
 }
-#email{
-    height: 161px;
+/* 이메일, 휴대폰번호 간격조정 */
+.sms{
     padding: 24px 0 20px;
 }
+.sms_check>p{margin-top: 10px; margin-bottom: 0px;}
+/* input 태그 w260 */
 .inputbox_w{
     width: 260px;
     height: 44px;
 }
+/* input 태그 w125 */
+.inputbox_w125{
+    width: 125px;
+    height: 44px;
+}
+/* 수신동의 체크란 옆 물음표 박스 */
 .why_btn{
     background: url(img/icon_tooltip.png);
     width: 20px;
     height: 20px;
     border: none;
     outline: none;
+    margin-top: 4px;
 }
-#email_check{margin-top: 20px;}
-#email_check input{
-    font-size: 16px;
-}
+
+#email{height: 116px;}
 #email_check p{
     margin-top: 14px;
     margin-bottom: 0px;
 }
 .small_text_bk{font-size: 14px; color: #222;}
 .small_text_rd{font-size: 14px; color: red;}
-#pwd{height:  93px; border-bottom: none;}
-#pwdck{height: 74px;}
-#name{height: 102px;}
-#phone{height: 193px;}
-#birth{height: 121px;}
-#gender{height: 75px;}
-#date{height: 124px; border-bottom: none;}
+#pwd{height: 44px;}
+#main_2>table>tbody>#pwd{border-bottom: none;}
+#pwdck{height:50px;}
+#pwdck>td{padding-top: 0 !important;}
+#name{height: 53px;}
+#phone{height: 144px;}
+#phone_input>select,input{margin-left: 10px;}
+
+#birth{height: 72px;}
+#birth select{margin-left: 10px;}
+#gender{height: 26px;}
+.MF{
+    float: left;
+    padding-right: 80px;
+}
+#date{height: 76px;}
+#main_2>table>tbody>#date{border-bottom: none;}
+#date_txt>p{margin: 0;}
 
 /* ------------------------------main_banner------------------------------ */
 #main_banner{
-    height: 94px;
+    height: 54px;
     background-color: #faf4e4;
+    border-radius: 5px;
     padding: 20px 40px;
     display: flex;
     align-items: center;
@@ -109,9 +155,90 @@ a{text-decoration: none;}
 }
 
 /* ------------------------------main_terms------------------------------ */
-#main_terms{height: 1653px;}
+#main_terms{
+    height: 1653px;
+    box-sizing: border-box;
+    margin-top: 80px;
+}
+#terms_textbox{
+    box-sizing: border-box;
+    width: 1364px;
+    max-height: 280px;
+    min-height: 200px;
+    /* 컨텐트의 양이 가변적이어서 스크롤바를 보여줘야 할지 말지 미리 결정하기 어려운 경우에는
+    overflow 속성값으로 auto를 사용하면 됩니다. 
+    엘리먼트의 overflow 속성을 auto로 설정해주면,
+    그 안의 컨텐트의 크기가 주어진 공간을 넘어가는 경우에만 스크롤바가 생깁니다.  */
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+#main_terms>div{ box-sizing: border-box;}
+/* --------------------terms1-------------------- */
+#terms1{
+    height: 55px;
+    border-bottom: 4px solid #222;
+}
+#terms1_txt{
+    display: flex;
+    justify-content: space-between;
+}
+#terms1_txt1{
+    margin: 0;
+    padding-bottom: 20px;
+}
+#terms1_txt2{
+    display: flex;
+    padding-top: 2px;
+}
+#terms1_txt2>input{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+#terms1_txt2>div{
+    font-size: 18px; 
+    font-weight: 700; 
+    vertical-align: middle;
+}
+
+/* --------------------terms2-------------------- */
+#terms2{height: 54px; margin-top: 30px;}
+#terms2>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;   
+}
+
+#terms2>ul>li{
+    font-size: 16px;
+}
+
+/* --------------------terms3-------------------- */
+#terms3{height: 325px; box-sizing: border-box; margin-top: 40px;}
+
+/* --------------------terms4-------------------- */
+#terms4{height: 271px; box-sizing: border-box; margin-top: 50px;}
+
+/* --------------------terms5-------------------- */
+#terms5{height: 275px; box-sizing: border-box; margin-top: 50px;}
+/* --------------------terms6-------------------- */
+#terms6{height: 275px; box-sizing: border-box; margin-top: 50px;}
+
 
 /* ------------------------------main_btn------------------------------ */
-#main_btn{height: 60px; margin-top: 80px;}
-
-/* 2884 */
+#main_btn{
+    height: 60px;
+    margin-top: 80px;
+    text-align: center;
+}
+#main_btn>button{
+    width: 260px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    background-color: #000;
+    font-size: 18px;
+    font-weight: 700;
+}
