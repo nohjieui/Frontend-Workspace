@@ -1,15 +1,11 @@
-
-div{
-    /* border: 1px solid red; */
-    /* font-family: Poppins, sans-serif !important; */
-}
-a{text-decoration: none;}
+/* div{border: 1px solid red;} */
+a{text-decoration: none; color: #000;}
 .wrap{width: 100%; height: 3873px;}
 #main{
     width: 1364px;
     height: 3336px;
     margin: auto;
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    /* font-family: 'Spoqa Han Sans Neo', 'sans-serif'; */
 }
 #main *{font-family: 'Spoqa Han Sans Neo', 'sans-serif';}
 h3{font-size: 22px; font-weight: 700;}
@@ -29,22 +25,28 @@ input[type="checkbox"]{
     width: 20px;
     height: 20px;
     margin: 0;
+    border: 1px solid #ccc;
 }
 .checkbox{margin-top: 20px;}
 .checkbox_ck>input{vertical-align: middle; margin-right: 6px;}
 .checkbox_ck>span{vertical-align: middle; margin-right: 30px;}
 .checkbox_ck>button{vertical-align: middle;}
 
+
 /* ------------------------------main_title------------------------------ */
-#main_title{
-    margin-top: 100px;
-    margin-bottom: 0px;
+#main>#main_title{
     height: 85px;
-    font-size: 40px;
+    /* background: blue; */
+    padding-bottom: 47px;
+    padding-top: 100px;
 }
-#main>p{
-    font-size: 18px;
+#main_title>h2{
+    font-size: 40px;
     margin: 0;
+}
+#main_title>p{
+    font-size: 18px;
+    margin: 2px 0 0 0;
 }
 
 /* ------------------------------main1------------------------------ */
@@ -54,6 +56,7 @@ input[type="checkbox"]{
     justify-content: space-between;
     border-bottom: 4px solid #222;
 }
+#main_1>h3{margin: 0 0 10px 0;}
 #main_1>p{margin: 0;}
 #main_1_r{font-size: 14px; line-height: 40px;}
 
@@ -106,7 +109,6 @@ input[type="checkbox"]{
     height: 20px;
     border: none;
     outline: none;
-    margin-top: 4px;
 }
 
 #email{height: 116px;}
@@ -119,6 +121,7 @@ input[type="checkbox"]{
 #pwd{height: 44px;}
 #main_2>table>tbody>#pwd{border-bottom: none;}
 #pwdck{height:50px;}
+#pwdck>th{padding-top: 0 !important;}
 #pwdck>td{padding-top: 0 !important;}
 #name{height: 53px;}
 #phone{height: 144px;}
@@ -174,6 +177,7 @@ input[type="checkbox"]{
     padding: 20px;
 }
 #main_terms>div{ box-sizing: border-box;}
+#main_terms>div>h5{padding-bottom: 8px;}
 /* --------------------terms1-------------------- */
 #terms1{
     height: 55px;
@@ -210,16 +214,14 @@ input[type="checkbox"]{
     padding: 0;
     list-style: none;   
 }
-
-#terms2>ul>li{
-    font-size: 16px;
-}
+#terms2>ul>li{font-size: 16px;}
 
 /* --------------------terms3-------------------- */
-#terms3{height: 325px; box-sizing: border-box; margin-top: 40px;}
+#terms3_iframe{width: 1305px; height: 600px;}
+#terms3{height: 375px; box-sizing: border-box; margin-top: 40px;}
 
 /* --------------------terms4-------------------- */
-#terms4{height: 271px; box-sizing: border-box; margin-top: 50px;}
+#terms4{height: 275px; box-sizing: border-box; margin-top: 50px;}
 
 /* --------------------terms5-------------------- */
 #terms5{height: 275px; box-sizing: border-box; margin-top: 50px;}
