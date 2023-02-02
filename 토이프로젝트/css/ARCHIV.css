@@ -1,0 +1,56 @@
+*{font-family: Poppins, 'Spoqa Han Sans Neo', 'sans-serif';}
+/* font */
+.nav_top_font{
+    font-size: 18px;
+    font-weight: 800;
+}
+.nav_m_font{
+    font-size: 15px;
+    font-weight: 800;
+}
+.nav_under_font{  
+    font-size: 15px;
+    font-weight: 400;
+}
+
+#nav2{
+    width: 100%;
+    box-sizing: border-box;
+    /* border-top: 8px solid #222; */
+    background: #fff;
+    position: absolute;
+    /* display: none; */
+    left: 0;
+    top: 100%;
+}
+#ARCHIV a{
+    text-decoration: none;
+    color: #000;
+}
+#ARCHIV{
+    box-sizing: border-box;
+    height: 296px;
+    width: 1640px;
+    margin: auto;
+    padding-top: 48px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+/* ARCHIV > ul tag */
+#ARCHIV>ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+#ARCHIV>ul>:first-child{margin-left: 0;}
+#ARCHIV>ul>li{margin-left: 150px;}
+
+/* ARCHIV > div tag */
+#ARCHIV>div img{
+    width: 329px;
+    height: 190px;
+}
+
+
+/* block */

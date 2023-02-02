@@ -117,7 +117,7 @@ input[type="checkbox"]{
     margin-bottom: 0px;
 }
 .small_text_bk{font-size: 14px; color: #222;}
-.small_text_rd{font-size: 14px; color: red;}
+.small_text_rd{font-size: 14px; color: rgb(255, 0, 82);}
 #pwd{height: 44px;}
 #main_2>table>tbody>#pwd{border-bottom: none;}
 #pwdck{height:50px;}
@@ -125,10 +125,10 @@ input[type="checkbox"]{
 #pwdck>td{padding-top: 0 !important;}
 #name{height: 53px;}
 #phone{height: 144px;}
-#phone_input>select,input{margin-left: 10px;}
+#phone_input>select,input{margin-right: 10px;}
 
 #birth{height: 72px;}
-#birth select{margin-left: 10px;}
+#birth select{margin-right: 10px;}
 #gender{height: 26px;}
 .MF{
     float: left;

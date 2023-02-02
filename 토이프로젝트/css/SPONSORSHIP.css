@@ -1,0 +1,45 @@
+*{font-family: Poppins, 'Spoqa Han Sans Neo', 'sans-serif';}
+/* font */
+.nav_top_font{
+    font-size: 18px;
+    font-weight: 800;
+}
+.nav_m_font{
+    font-size: 15px;
+    font-weight: 800;
+}
+.nav_under_font{  
+    font-size: 15px;
+    font-weight: 400;
+}
+/* #nav3>*{
+    border: 1px solid red;
+} */
+#nav3{
+    width: 100%;
+    box-sizing: border-box;
+    /* border-top: 8px solid #222; */
+    background: #fff;
+    position: absolute;
+    /* display: none; */
+    left: 0;
+    top: 100%;
+}
+#SPONSORSHIP{
+    box-sizing: border-box;
+    height: 255px;
+    width: 1640px;
+    margin: auto;
+    padding-top: 48px;
+    padding-bottom: 50px;
+    display: flex;
+}
+#SPONSORSHIP>dl{
+    margin-left: 120px;
+}
+#SPONSORSHIP>dl>:first-child{
+    height: 39px;
+}
+#SPONSORSHIP>dl>dt{
+    margin-top: 2px;
+}

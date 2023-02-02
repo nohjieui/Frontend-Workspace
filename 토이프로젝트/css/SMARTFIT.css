@@ -1,0 +1,53 @@
+*{font-family: Poppins, 'Spoqa Han Sans Neo', 'sans-serif';}
+/* font */
+.nav_top_font{
+    font-size: 18px;
+    font-weight: 800;
+}
+.nav_m_font{
+    font-size: 15px;
+    font-weight: 800;
+}
+.nav_under_font{  
+    font-size: 15px;
+    font-weight: 400;
+}
+#nav4{
+    width: 100%;
+    box-sizing: border-box;
+    /* border-top: 8px solid #222; */
+    background: #fff;
+    position: absolute;
+    /* display: none; */
+    left: 0;
+    top: 100%;
+}
+#nav4_in{
+    background-image: url(/토이프로젝트/img/nav4_in_img.png);
+    background-position: center;
+    background-size: cover;
+}
+#SMARTFIT{
+    box-sizing: border-box;
+    height: 268px;
+    width: 1640px;
+    margin: auto;
+    padding-top: 48px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+}
+#SMARTFIT>h3{
+    font-size: 24px;
+    font-weight: 800;
+    margin-right: 80px;
+    color:#fff ;
+}
+#SMARTFIT>p{
+    color:#fff ;
+    font-size: 20px;
+    font-weight: 400;
+}
+/* background-image: url(/front/images/renewal/gnb_banner_smartfit.png); */
+
+/* block */
