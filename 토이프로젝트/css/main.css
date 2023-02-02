@@ -16,7 +16,7 @@ input[type="radio"]{
     height: 20px;
     margin: 0;
 }
-.check_radio{margin-top: 20px;}
+.check_radio{margin-top: 10px;}
 .radio>input{vertical-align: middle; margin-right: 6px;}
 .radio>span{vertical-align: middle; margin-right: 50px;}
 .radio>button{vertical-align: middle;}
@@ -104,12 +104,14 @@ input[type="checkbox"]{
 }
 /* 수신동의 체크란 옆 물음표 박스 */
 .why_btn{
-    background: url(img/icon_tooltip.png);
+    background: url(/토이프로젝트/img/icon_tooltip.png);
     width: 20px;
     height: 20px;
     border: none;
     outline: none;
 }
+/* 이메일->아이디값 미입력시 하단 태그 */
+#emailLevelResult{padding-top: 10px;}
 
 #email{height: 116px;}
 #email_check p{

@@ -89,13 +89,17 @@
     transition-duration: 0.5s;
     z-index: 9999;
 }
+#top_center_archiv:hover>#nav2{
+    height: 296px;
+    border-top: 8px solid #222;
+}
 #nav3{
     overflow: hidden;
     height: 0px;
     transition-duration: 0.5s;
 }
 #top_center_sponsorship:hover>#nav3{
-    height: 255px;
+    height: 285px;
     border-top: 8px solid #222;
 }
 
@@ -109,10 +113,6 @@
     border-top: 8px solid #222;
 }
 
-#top_center_archiv:hover>#nav2{
-    height: 296px;
-    /* border-top: 8px solid #222; */
-}
 
 
 #nav .nav_top_bLine:hover, #ARCHIV li:hover, #nav3 [class="nav_top_font nav_top_bLine"]:hover {

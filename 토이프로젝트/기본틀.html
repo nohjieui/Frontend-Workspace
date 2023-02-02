@@ -199,28 +199,28 @@
                                 <th>E-MAIL</th>
                                 <td class="sms">
                                     <div id="email_input">
-                                        <input class="inputbox_w" type="text" required>
-                                         @ 
-                                        <input class="inputbox_w" type="text" disabled="disable">
-                                        <select class="inputbox_w" name="" id="">
+                                        <input type="text" class="inputbox_w" id="userId" required>@ 
+                                        <input type="text" class="inputbox_w" id="email_in">
+                                        <select class="inputbox_w idBtn emailOp" id="emailSelect">
                                             <option value="x">선택하세요</option>
                                             <option value="daum">daum.net</option>
-                                            <option value="naver">naver.comc</option>
+                                            <option value="naver">naver.com</option>
                                             <option value="chol">chol.com</option>
                                             <option value="dreamwiz">dreamwiz.com</option>
-                                            <option value="gmail">gmail.com/option>
+                                            <option value="gmail">gmail.com</option>
                                             <option value="korea">korea.com</option>
                                             <option value="nate">nate.com</option>
                                             <option value="etc">기타(직접입력)</option>
                                             <option value="staff">임직원/계열사</option>
                                         </select> 
                                     </div>
+                                    <div class="small_text_rd" id="emailLevelResult"></div>
                                     <div class="sms_check">
                                         <div class="check_radio">
                                             <label class="radio" for="">
-                                                <input type="radio" name="EMAIL" required>
+                                                <input type="radio" id="radioBtn" name="EMAIL" required>
                                                 <span>이메일 수신 동의</span>
-                                                <input type="radio" name="EMAIL" required> 
+                                                <input type="radio" id="radioBtn" name="EMAIL" required> 
                                                 <span>이메일 수신 거부</span>
                                                 <!-- 수신동의 체크란 옆 물음표 박스 -->
                                                 <button type="button" class="why_btn"></button><br>
@@ -234,7 +234,8 @@
                                 <th>비밀번호</th>
                                 <td>
                                     <div id="pwd_input">
-                                        <input class="inputbox_w" type="password" placeholder="영문, 숫자 포함 8자 이상" required>
+                                        <input type="password" class="inputbox_w" id="userPwd" placeholder="영문, 숫자 포함 8자 이상"  onkeyup="return validate();" required>
+                                        <span id="userPwd_text">ddd</span>
                                     </div>
                                 </td>
                             </tr>
@@ -353,7 +354,7 @@
                                         <option value="30">30</option>
                                         <option value="31">31</option>
                                     </select>
-                                    <div id="birthLevelResult">dd</div>
+                                    <div id="birthLevelResult"></div>
                                 </td>
                             </tr>
                             <tr id="gender">
@@ -526,5 +527,23 @@
             </div>
         </div>
     </div>
+    <script>
+        function validate(){
+        let userPwd = document.getElementById("userPwd");
+
+        let regExpEmail = /^\S$/;
+        let regExpPwd = /^\S{8,}&/;
+        let regExpName = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,5}$/;
+        let regExpPhone1 = /^\d{3,4}&/;
+        let regExpPhone2 = /^\d{4}&/;
+
+        if(!regExpPwd.test(userPwd)){
+            document.getElementById("userPwd_text").html("비밀번호를 8자 이상 입력해 주세요.");
+            return false;
+        }
+
+
+    }
+    </script>
 </body>
 </html>
