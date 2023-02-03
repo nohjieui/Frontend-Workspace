@@ -19,13 +19,14 @@ $(function () {
                 }
             }
         }
-        // let valEmailCheck = $("#userId").val() != ""; // true시 아이디입력칸 작성함
-        // let selectedValueCheck = $("#emailSelect").val() != 'x'; // true일시 이메일 선택함
-        // let radioCheckdCheck = $("input[name=EMAIL]").is(":checked"); // ture면 체크함 
+        // 강사님이 짜준 주석코드로 꼭 다시 해보기★★★★★★★★★★★★★★★★★★★★★★
+        let valEmailCheck = $("#userId").val() != ""; // true시 아이디입력칸 작성함
+        let selectedValueCheck = $("#emailSelect").val() != 'x'; // true일시 이메일 선택함
+        let radioCheckdCheck = $("input[name=EMAIL]").is(":checked"); // ture면 체크함 
 
-        // if (valEmailCheck && selectedValueCheck && radioCheckdCheck){
-        //     $("#emailLevelResult").html("입력");
-        // }
+        if (valEmailCheck && selectedValueCheck && radioCheckdCheck){
+            $("#emailLevelResult").html("입력");
+        }
 
         // // 1_1 아이디값이 비어있거나 / 이메일 값이 x가 아니거나
         // if($("#userId").val() == "" && $("#emailSelect").val() != 'x'){
