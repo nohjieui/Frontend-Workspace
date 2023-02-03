@@ -85,40 +85,41 @@ $(function () {
     // .onblur() : 사용자가 입력 필드를 떠날 때 자바 스크립트를 실행
     $("#name_js").blur(function () {
         let userName = document.getElementById("name_js").value;
-        let regExpName1 = /^.{2,5}$/;
-        let regExpName2 = /^.[ㄱ-ㅎㅏ-ㅣ가-힣]$/;
+        // let regExpName1 = /^+{2,5}$/;
+        let regName = /\w/ig; // 영문자, 숫자, _
+        let regNameGap = /^\s/; // 첫글자가 공백
 
-        // 이름값이 비어있으면 이름을 입력해 주세요.
-        if ($("#name_js").val() == '') {
+        // 이름값이 비어있거나 공백일경우
+        if ($("#name_js").val() == '' || regNameGap.test(userName)) {
             $("#nameLevelResult").html("이름을 입력해 주세요.");
+        } else if(regName.test(userName)){
+            $("#nameLevelResult").html("이름을 한글로 입력해 주세요.");
+        } else if(userName.length < 2 || userName.length > 5){
+            $("#nameLevelResult").html("이름을 2자 이상 5자 이하로 입력해 주세요.");
         }
-        else{
-            
-            // 이름값이 영어면 -> 이름을 한글로 입력해 주세요.
-            if (!regExpName2.test(userName)) {
-                $("#nameLevelResult").html("이름을 한글로 입력해 주세요.");
-            }
-    
-            // 이름을 2자 이상 5자 이하로 입력해 주세요.
-            else if (!regExpName1.test(userName)) {
-                $("#nameLevelResult").html("이름을 2자 이상 5자 이하로 입력해 주세요.");
-            }
-
-        }
-        console.log(regExpName2.test(userName));
-
     });
-
-
-    // $(document).click(function(){
-    //     // 이름값이 비어있으면 이름을 입력해 주세요.
-    //     if($("#name_js").val() == ''){
-    //         $("#nameLevelResult").html("이름을 입력해 주세요.");
-    //     }
-    //     // 이름을 2자 이상 5자 이하로 입력해 주세요.
-    //     let regExpName = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,5}$/;
-    // });
 });
+
+// ------------------------------- 비밀번호 ------------------------------- 
+$(function () {
+    // keyup 이벤트
+    // 1. 한글자라도 입력했을 떄 -> 입력값의 길이가 0보다 클때
+    // 비밀번호를 8자 이상 입력해 주세요.
+    // 2. 8자 이상 입력했을 떄 -> 입력값의 길이가 8이상일때
+    // 비밀번호 확인을 위해 다시 한 번 입력해 주세요.
+    $("#userPwd").keyup(function(){
+        if($("#userPwd").val().length > 0 || $("#userPwd").val().length < 8){
+            $("#pwdLevelResult").html("비밀번호를 8자 이상 입력해 주세요.");
+        } 
+        if($("#userPwd").val().length >= 8){
+             $("#pwdLevelResult").html("비밀번호 확인을 위해 다시 한 번 입력해 주세요.");
+        }
+    });
+});
+
+
+// ------------------------------- 비밀번호 확인 ------------------------------- 
+
 
 
 // ------------------------------- 휴대폰 번호 ------------------------------- 
@@ -134,10 +135,11 @@ $(function () {
     $("#birth_d option:selected").val();
 
     $(".birth_js").change(function () {
+        // 모든 옵션값이 선택된 경우
         if ($("#birth_d option:selected").val() != '' && $("#birth_m option:selected").val() != '' && $("#birth_y option:selected").val() != '') {
             $("#birthLevelResult").html("");
         }
-        else {
+        else { // 모든 옵션값이 선택되지 않았을 경우
             if ($("#birth_d option:selected").val() == '') {
                 $("#birthLevelResult").html("생년월일 일자를 선택해 주세요.");
             }

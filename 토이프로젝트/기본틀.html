@@ -235,7 +235,7 @@
                                 <td>
                                     <div id="pwd_input">
                                         <input type="password" class="inputbox_w" id="userPwd" placeholder="영문, 숫자 포함 8자 이상"  onkeyup="return validate();" required>
-                                        <span id="userPwd_text">ddd</span>
+                                        <span class="small_text_rd" id="pwdLevelResult"></span>
                                     </div>
                                 </td>
                             </tr>
@@ -244,7 +244,7 @@
                                 <td>
                                     <div id="pwdch_input">
                                         <input class="inputbox_w" type="password" placeholder="비밀번호 확인" required>
-                                        <spen class="small_text_rd">비밀번호 확인을 위해 다시 한 번 입력해 주세요.</spen>
+                                        <spen class="small_text_rd" id="pwdckLevelResult">비밀번호 확인을 위해 다시 한 번 입력해 주세요.</spen>
                                     </div>
                                 </td>
                             </tr>
@@ -274,6 +274,7 @@
                                         <input type="text" class="inputbox_w125">
                                         <input type="text" class="inputbox_w125">
                                     </div>
+                                    <div class="small_text_rd" id="PhoneLevelResult"></div>
                                     <div class="sms_check">
                                         <div class="check_radio">
                                             <label class="radio" for="">
