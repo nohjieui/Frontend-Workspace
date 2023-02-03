@@ -111,7 +111,7 @@ input[type="checkbox"]{
     outline: none;
 }
 /* 이메일->아이디값 미입력시 하단 태그 */
-#emailLevelResult{padding-top: 10px;}
+#emailLevelResult,#birthLevelResult,#nameLevelResult{padding-top: 10px;}
 
 #email{height: 116px;}
 #email_check p{

@@ -200,7 +200,7 @@
                                 <td class="sms">
                                     <div id="email_input">
                                         <input type="text" class="inputbox_w" id="userId" required>@ 
-                                        <input type="text" class="inputbox_w" id="email_in">
+                                        <input type="text" class="inputbox_w" id="email_in" disabled>
                                         <select class="inputbox_w idBtn emailOp" id="emailSelect">
                                             <option value="x">선택하세요</option>
                                             <option value="daum">daum.net</option>
@@ -218,9 +218,9 @@
                                     <div class="sms_check">
                                         <div class="check_radio">
                                             <label class="radio" for="">
-                                                <input type="radio" id="radioBtn" name="EMAIL" required>
+                                                <input type="radio" name="EMAIL" required>
                                                 <span>이메일 수신 동의</span>
-                                                <input type="radio" id="radioBtn" name="EMAIL" required> 
+                                                <input type="radio" name="EMAIL" required> 
                                                 <span>이메일 수신 거부</span>
                                                 <!-- 수신동의 체크란 옆 물음표 박스 -->
                                                 <button type="button" class="why_btn"></button><br>
@@ -252,8 +252,9 @@
                                 <th>이름</th>
                                 <td>
                                     <div id="name_input">
-                                        <input class="inputbox_w" type="text">
+                                        <input type="text" class="inputbox_w" id="name_js">
                                     </div>
+                                    <div class="small_text_rd" id="nameLevelResult"></div>
                                 </td>
                             </tr>
                             <tr id="phone">
@@ -289,7 +290,7 @@
                                 <th>생년월일</th>
                                 <td class="sms">
                                     <select class="inputbox_w125 birth_js" id="birth_y">
-                                        <option value="year">년도</option>
+                                        <option value="">년도</option>
                                         <option value="2023">2023</option>
                                         <option value="2022">2022</option>
                                         <option value="2021">2021</option>
@@ -306,7 +307,7 @@
                                         <option value="2010">2010</option>
                                     </select>
                                     <select class="inputbox_w125 birth_js" id="birth_m">
-                                        <option value="month">월</option>
+                                        <option value="">월</option>
                                         <option value="01">01</option>
                                         <option value="02">02</option>
                                         <option value="03">03</option>
@@ -321,7 +322,7 @@
                                         <option value="12">12</option>
                                     </select>
                                     <select class="inputbox_w125 birth_js" id="birth_d">
-                                        <option value="day">일</option>
+                                        <option value="">일</option>
                                         <option value="01">01</option>
                                         <option value="02">02</option>
                                         <option value="03">03</option>
@@ -354,7 +355,7 @@
                                         <option value="30">30</option>
                                         <option value="31">31</option>
                                     </select>
-                                    <div id="birthLevelResult"></div>
+                                    <div id="birthLevelResult" class="small_text_rd"></div>
                                 </td>
                             </tr>
                             <tr id="gender">
@@ -527,23 +528,5 @@
             </div>
         </div>
     </div>
-    <script>
-        function validate(){
-        let userPwd = document.getElementById("userPwd");
-
-        let regExpEmail = /^\S$/;
-        let regExpPwd = /^\S{8,}&/;
-        let regExpName = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,5}$/;
-        let regExpPhone1 = /^\d{3,4}&/;
-        let regExpPhone2 = /^\d{4}&/;
-
-        if(!regExpPwd.test(userPwd)){
-            document.getElementById("userPwd_text").html("비밀번호를 8자 이상 입력해 주세요.");
-            return false;
-        }
-
-
-    }
-    </script>
 </body>
 </html>
