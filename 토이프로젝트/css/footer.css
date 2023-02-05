@@ -1,10 +1,11 @@
 .text_gray{color: rgba(117, 117, 117)}
 .text_white{color: #fff;}
 .font-bold{font-weight: 700;}
+.text_gray>a{color: rgba(117, 117, 117)}
 
 #footer *{font-family: Poppins, 'Spoqa Han Sans Neo', 'sans-serif';}
 #footer{
-    height: 417px;
+    height: 432px;
     box-sizing: border-box;
     background: #222;
     padding: 40px 0;

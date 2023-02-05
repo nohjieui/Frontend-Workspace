@@ -23,7 +23,7 @@ div{
 }
 
 .align-items-test{
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
 }
 

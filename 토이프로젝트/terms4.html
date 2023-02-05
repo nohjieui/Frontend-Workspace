@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <style>
+        body{
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        *{
+            font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+        }
+        .area{
+            width: 1322px;
+            height: 600px;
+            /* border: 1px solid red; */
+        }
+        .ifram_title{
+            font-size: 14px;
+            font-weight: 700;
+            color: #222;
+        }
+        .iframe_con{
+            font-size: 13px;
+            font-weight: 300;
+        }
+        .iframe_table_bold>th{
+            font-size: 12px;
+            font-weight: 700;
+            color: rgb(102, 102, 102);
+            background: #eaeaea;
+            padding: 7px 0 5px;
+            border-bottom: 1px solid #dfdfdf;
+            border-left: 1px solid #dfdfdf;
+        }
+        .iframe_table>td{
+            font-size: 12px;
+            font-weight: 300;
+            color: rgb(102, 102, 102);
+            padding: 7px 10px 5px;
+            border-bottom: 1px solid #dfdfdf;
+            border-left: 1px solid #dfdfdf;
+        }
+        #iframe_table{
+            width: 100%;
+            border: 1px solid rgb(204, 204, 204);
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        </style>
+</head>
+<body>
+    <div class="area">
+        <div>
+            <p class="iframe_con">* 프로스펙스닷컴 서비스 제공을 위해서 필요한 최소한의 개인정보이므로 동의를 해 주셔야 서비스를 이용하실 수 있습니다.</p>
+            <colgroup>
+                <col width="30%">
+                <col>
+                <col width="30%">
+            </colgroup>
+            <table id="iframe_table">
+                <tr class="iframe_table_bold">
+                    <th>목적</th>
+                    <th>항목</th>
+                    <th>보유기간</th>
+                </tr>
+                <tr class="iframe_table">
+                    <td>이용자 식별 및 본인여부 확인, <br>
+                        서비스 이용 및 상담, 연령확인
+                    </td>
+                    <td>이름, 생년월일, 성별, 휴대전화번호, 아이디, 비밀번호, 이메일</td>
+                    <td>회원탈퇴 후 30일 까지</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

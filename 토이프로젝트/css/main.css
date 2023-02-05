@@ -1,11 +1,34 @@
 /* div{border: 1px solid red;} */
+/* *{border: 1px solid red;} */
+body{margin: 0;}
+.smallbox{
+    content: '';
+    display: inline-block;
+    width: 4px;
+    margin-left: 4px;
+    margin-bottom: 11px;
+    border-bottom: 4px solid #ff0052;
+}
+.smallbox_bk{
+    content: '';
+    display: inline-block;
+    width: 4px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    border-bottom: 4px solid #000;
+}
+
 a{text-decoration: none; color: #000;}
-.wrap{width: 100%; height: 3873px;}
+.wrap{
+    width: 100%; height: 3873px;
+    display: flex;
+    flex-direction: column;
+}
 #main{
     width: 1364px;
     height: 3336px;
     margin: auto;
-    /* font-family: 'Spoqa Han Sans Neo', 'sans-serif'; */
+    padding-top: 100px; /* 스크롤바 고정으로인해 준 값 */
 }
 #main *{font-family: 'Spoqa Han Sans Neo', 'sans-serif';}
 h3{font-size: 22px; font-weight: 700;}
@@ -46,7 +69,8 @@ input[type="checkbox"]{
 }
 #main_title>p{
     font-size: 18px;
-    margin: 2px 0 0 0;
+    margin-top: 5px;
+    
 }
 
 /* ------------------------------main1------------------------------ */
@@ -61,7 +85,8 @@ input[type="checkbox"]{
 #main_1_r{font-size: 14px; line-height: 40px;}
 
 /* ------------------------------main2------------------------------ */
-#main_2{height: 943px;
+#main_2{
+    /* height: 943px; */
     /* border: 1px solid green; */
     box-sizing: border-box;
 }
@@ -111,7 +136,7 @@ input[type="checkbox"]{
     outline: none;
 }
 /* 이메일->아이디값 미입력시 하단 태그 */
-#emailLevelResult,#birthLevelResult,#nameLevelResult,#PhoneLevelResult{padding-top: 10px;}
+#emailLevelResult,#birthLevelResult,#nameLevelResult,#PhoneLevelResult,#pwdckLevelResult{padding-top: 10px;}
 
 #email{height: 116px;}
 #email_check p{
@@ -141,6 +166,7 @@ input[type="checkbox"]{
 #date_txt>p{margin: 0;}
 
 /* ------------------------------main_banner------------------------------ */
+
 #main_banner{
     height: 54px;
     background-color: #faf4e4;
@@ -219,22 +245,26 @@ input[type="checkbox"]{
 #terms2>ul>li{font-size: 16px;}
 
 /* --------------------terms3-------------------- */
-#terms3_iframe{width: 1305px; height: 600px;}
 #terms3{height: 375px; box-sizing: border-box; margin-top: 40px;}
 
 /* --------------------terms4-------------------- */
 #terms4{height: 275px; box-sizing: border-box; margin-top: 50px;}
 
 /* --------------------terms5-------------------- */
-#terms5{height: 275px; box-sizing: border-box; margin-top: 50px;}
+#terms5{height: 375px; box-sizing: border-box; margin-top: 50px;}
 /* --------------------terms6-------------------- */
-#terms6{height: 275px; box-sizing: border-box; margin-top: 50px;}
+#terms6{height: 325px; box-sizing: border-box; margin-top: 50px;}
+/* --------------------terms iframe-------------------- */
+#terms3_iframe{width: 1305px; height: 600px;}
+#terms4_iframe{width: 1305px; height: 120px;}
+#terms5_iframe{width: 1305px; height: 600px;}
+#terms6_iframe{width: 1305px; height: 200px;}
 
 
 /* ------------------------------main_btn------------------------------ */
 #main_btn{
     height: 60px;
-    margin-top: 80px;
+    margin-top: 50px;
     text-align: center;
 }
 #main_btn>button{
@@ -245,4 +275,17 @@ input[type="checkbox"]{
     background-color: #000;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
+}
+
+#top_btn {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #222222;
+    background: #fff url(https://image.prospecs.com/front/images/renewal/icon_top_arrow.svg) center no-repeat;
 }

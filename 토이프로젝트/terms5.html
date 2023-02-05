@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <style>
+        body{
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        *{
+            font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+        }
+        .area{
+            width: 1289px;
+            height: 600px;
+            /* border: 1px solid red; */
+        }
+        .ifram_title{
+            font-size: 14px;
+            font-weight: 700;
+            color: #222;
+        }
+        .iframe_con,dd{
+            font-size: 13px;
+            font-weight: 300;
+        }
+        .iframe_table_bold>th{
+            font-size: 12px;
+            font-weight: 700;
+            color: rgb(102, 102, 102);
+            background: #eaeaea;
+            padding: 7px 0 5px;
+            border-bottom: 1px solid #dfdfdf;
+            border-left: 1px solid #dfdfdf;
+        }
+        .iframe_table>td{
+            font-size: 12px;
+            font-weight: 300;
+            color: rgb(102, 102, 102);
+            padding: 7px 10px 5px;
+            border-bottom: 1px solid #dfdfdf;
+            border-left: 1px solid #dfdfdf;
+        }
+        #iframe_table{
+            width: 1269px;
+            border: 1px solid rgb(204, 204, 204);
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        dl{margin-left: -20px;}
+        table{margin-left: 20px;}
+    </style>
+</head>
+<body>
+    <div class="area">
+        <p class="iframe_con">회사는 서비스 향상을 위해서 고객의 개인정보를 외부전문업체에 위탁하여 처리할 수 있습니다.</p>
+         <dl>
+            <dd>개인정보의 처리를 위탁하는 경우에는 미리 그 사실을 고객에게 고지하고 동의를 받도록 하겠습니다.</dd>
+            <dd>개인정보의 처리를 위탁하는 경우에는 위탁계약 등을 통하여 서비스제공자의 개인정보보호 관련 지시엄수, 개인정보에 관한 비밀유지, 제3자 제공의 금지 및 사고시의 책임부담 등을 명확히 규정하고 당해 계약내용을 서면 또는 전자적으로 보관하겠습니다.</dd>
+            <dd>개인정보 처리위탁 기관 및 위탁업무의 내용, 위탁기간은 다음과 같습니다. </dd>
+         </dl>
+         <colgroup>
+            <col width="12%">
+            <col width="17%">
+            <col>
+            <col width="26%">
+        </colgroup>
+        <table id="iframe_table">
+            <tr class="iframe_table_bold">
+                <th>위탁업무</th>
+                <th>위탁제휴사</th>
+                <th>위탁의 범위 및 항목</th>
+                <th>보유 및 이용 기간</th>
+            </tr>
+            <tr class="iframe_table">
+                <td>상품배송</td>
+                <td>CJ대한통운</td>
+                <td>상품 택배 배송, 교환/반품 상품 수거 등<br>
+                    - 이름, 주소, 휴대전화번호, 주문상품정보</td>
+                <td rowspan="5">회원탈퇴시 혹은 위탁계약 종료시까지</td>
+            </tr>
+            <tr class="iframe_table">
+                <td>SMS발송대행</td>
+                <td>휴머스온</td>
+                <td>회원가입, 구매정보 및 홍보성 전달<br>
+                    - 이름, 휴대전화번호, 이메일주소</td>
+            </tr>
+            <tr class="iframe_table">
+                <td>시스템구축 및 유지보수</td>
+                <td>(주)엠파워시스템</td>
+                <td>고객정보 DB시스템 운영/관리 업무<br>
+                    (전산 아웃소싱)</td>
+            </tr>
+            <tr class="iframe_table">
+                <td>전자결제대행</td>
+                <td>KG 이니시스, NHN엔터테이먼스(페이코),카카오페이,네이버(주),LG CNS(스마일페이)</td>
+                <td>온라인 결제대행<br>
+                    - 이름, 주소, 휴대전화번호, 이메일주소, 생년월일, 주문정보, 결제정보</td>
+            </tr>
+            <tr class="iframe_table">
+                <td>본인인증</td>
+                <td>NICE 평가정보</td>
+                <td>주문시 본인인증<br>
+                    - 이름, 생년월일, 휴대전화번호</td>
+            </tr>
+        </table>
+
+        
+    </div>
+</body>
+</html>

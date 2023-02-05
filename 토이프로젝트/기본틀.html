@@ -189,14 +189,17 @@
                 <!-- 기본정보 텍스트 -->
                 <div id="main_1">
                     <h3>기본정보</h3>
-                    <p id="main_1_r">필수 입력 정보</p>
+                    <div>
+                        <span class="smallbox"></span>
+                        <span id="main_1_r">필수 입력 정보</span>
+                    </div>
                 </div>
                 <!-- 기본정보 폼 -->
                 <div id="main_2">
                     <table>
                         <tbody>
                             <tr id="email">
-                                <th>E-MAIL</th>
+                                <th>E-MAIL<span class="smallbox"></span></th>
                                 <td class="sms">
                                     <div id="email_input">
                                         <input type="text" class="inputbox_w" id="userId" required>@ 
@@ -231,25 +234,26 @@
                                 </td>
                             </tr>
                             <tr id="pwd">
-                                <th>비밀번호</th>
+                                <th>비밀번호<span class="smallbox"></span></th>
                                 <td>
                                     <div id="pwd_input">
-                                        <input type="password" class="inputbox_w" id="userPwd" placeholder="영문, 숫자 포함 8자 이상"  onkeyup="return validate();" required>
+                                        <input type="password" class="inputbox_w pwd_equal" id="pwd_js" placeholder="영문, 숫자 포함 8자 이상"  required>
                                         <span class="small_text_rd" id="pwdLevelResult"></span>
                                     </div>
                                 </td>
                             </tr>
                             <tr id="pwdck">
-                                <th>비밀번호 확인</th>
+                                <th>비밀번호 확인<span class="smallbox"></span></th>
                                 <td>
                                     <div id="pwdch_input">
-                                        <input class="inputbox_w" type="password" placeholder="비밀번호 확인" required>
-                                        <spen class="small_text_rd" id="pwdckLevelResult">비밀번호 확인을 위해 다시 한 번 입력해 주세요.</spen>
+                                        <input type="password" class="inputbox_w pwd_equal" id="pwdch_js" placeholder="비밀번호 확인" required>
+                                        <spen class="small_text_rd" id="pwdckFixed">비밀번호 확인을 위해 다시 한 번 입력해 주세요.</spen>
                                     </div>
+                                    <div class="small_text_rd" id="pwdckLevelResult"></div>
                                 </td>
                             </tr>
                             <tr id="name">
-                                <th>이름</th>
+                                <th>이름<span class="smallbox"></span></th>
                                 <td>
                                     <div id="name_input">
                                         <input type="text" class="inputbox_w" id="name_js">
@@ -258,7 +262,7 @@
                                 </td>
                             </tr>
                             <tr id="phone">
-                                <th>휴대폰 번호</th>
+                                <th>휴대폰 번호<span class="smallbox"></span></th>
                                 <td class="sms">
                                     <div id="phone_input">
                                         <select class="inputbox_w125" id="">
@@ -271,8 +275,8 @@
                                             <option value="050">050</option>
                                             <option value="070">070</option>
                                         </select>
-                                        <input type="text" class="inputbox_w125">
-                                        <input type="text" class="inputbox_w125">
+                                        <input type="text" class="inputbox_w125 phone_js" id="phone1" maxlength="4">
+                                        <input type="text" class="inputbox_w125 phone_js" id="phone2" maxlength="4">
                                     </div>
                                     <div class="small_text_rd" id="PhoneLevelResult"></div>
                                     <div class="sms_check">
@@ -371,7 +375,7 @@
                                 </td>
                             </tr>
                             <tr id="date">
-                                <th>휴먼방지기간</th>
+                                <th>휴먼방지기간<span class="smallbox"></span></th>
                                 <td>
                                     <div id="check_radio">
                                         <label class="radio" for="">
@@ -410,8 +414,8 @@
                     </div>
                     <div id="terms2">
                         <ul>
-                            <li>전체 약관 동의에 체크하시면 전체 약관에 일괄 동의 됩니다.</li>
-                            <li>등록하신 개인정보는 외부로 유출되지 않으며, 동의하지 않은 목적으로는 사용되지 않습니다.</li>
+                            <li><span class="smallbox_bk"></span>전체 약관 동의에 체크하시면 전체 약관에 일괄 동의 됩니다.</li>
+                            <li><span class="smallbox_bk"></span>등록하신 개인정보는 외부로 유출되지 않으며, 동의하지 않은 목적으로는 사용되지 않습니다.</li>
                         </ul>
                     </div>
                     <div id="terms3">
@@ -429,8 +433,9 @@
                     <div id="terms4">
                         <h5>개인정보 수집 및 이용에 관한 동의</h5>
                         <div id="terms_textbox">
-                            
+                            <iframe id="terms4_iframe" src="terms4.html" style="width:100%; height:100%;" marginwidth="0" marginheight="0" frameborder="0" scrolling=yes></iframe>
                         </div>
+                        <!-- style="width:100%; height:70px;" marginwidth="0" marginheight="0"  -->
                         <div class="checkbox">
                             <label class="checkbox_ck" for="">
                                 <input type="checkbox" name="sCheck" required>
@@ -441,7 +446,7 @@
                     <div id="terms5">
                         <h5>개인정보의 취급 위탁 동의</h5>
                         <div id="terms_textbox">
-    
+                            <iframe id="terms5_iframe" src="terms5.html" style="width:100%" frameborder="0" scrolling=yes></iframe>
                         </div>
                         <div class="checkbox">
                             <label class="checkbox_ck" for="">
@@ -453,7 +458,7 @@
                     <div id="terms6">
                         <h5>개인정보 제3자 제공에 대한 동의 [선택, 미 동의 시에도 회원가입 가능]</h5>
                         <div id="terms_textbox">
-    
+                            <iframe id="terms6_iframe" src="terms6.html" frameborder="0" scrolling=yes></iframe>
                         </div>
                         <div class="checkbox">
                             <label class="checkbox_ck" for="">
@@ -462,10 +467,10 @@
                             </label>
                         </div>
                     </div>
-                </div>
-                <!-- 회원가입 버튼 -->
-                <div id="main_btn">
-                    <button type="button">회원가입</button>
+                    <!-- 회원가입 버튼 -->
+                    <div id="main_btn">
+                        <button type="button">회원가입</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -489,7 +494,8 @@
                             <li class="text_gray font-bold">SGI서울보증안내</li>
                             <li class="text_gray">
                                 고객님께서 안전거래를 위해 현금 등으로 결제하신 경우,<br>
-                                저희 쇼핑몰에서 가입한 소비자피해보상보험 서비스를 이용하실 수 있습니다. <a class="font-bold">서비스 가입 사실 확인</a>
+                                저희 쇼핑몰에서 가입한 소비자피해보상보험 서비스를 이용하실 수 있습니다. 
+                                <a class="font-bold">서비스 가입 사실 확인</a>
                             </li>
                             <li class="font-bold copyright">프로스펙스닷컴 | COPYRIGHT© LS NETWORKS CO. ALL RIGHTS RESERVED</li>
                         </ul>
@@ -528,6 +534,8 @@
                 </div>
             </div>
         </div>
+        <!-- top button -->
+        <button type="button" id="top_btn"></button>
     </div>
 </body>
 </html>

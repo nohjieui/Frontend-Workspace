@@ -74,14 +74,14 @@
     transition-duration: 0.3s;
     cursor: pointer;
 }
-#top_center_shop:hover>#nav{
-    height: 635px;
-    border-top: 8px solid #222;
-}
 #nav{
     overflow: hidden;
     height: 0px;
     transition-duration: 0.5s;
+}
+#top_center_shop:hover>#nav{
+    height: 635px;
+    border-top: 8px solid #222;
 }
 #nav2{
     overflow: hidden;
