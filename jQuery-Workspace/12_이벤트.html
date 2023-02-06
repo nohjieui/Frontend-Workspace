@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>이벤트</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+
 <body>
     <h1>이벤트 핸들러(이벤트 발생시 실행될 function) 연결 방법 종류</h1>
 
@@ -19,22 +21,22 @@
 
     <h4 id="test1">클릭클릭</h4>
     <script>
-        $(function(){
-            $("#test1").click(function(){
+        $(function () {
+            $("#test1").click(function () {
                 $(this).html("클릭되었습니다.")
             });
 
-            $("#test1").dblclick(function(){
+            $("#test1").dblclick(function () {
                 $(this).css("color", "red");
             });
 
-            $("#test1").contextmenu(function(){
+            $("#test1").contextmenu(function () {
                 console.log("우클릭 실행됨");
             });
         });
     </script>
 
-    
+
     <br><br>
     <h3>* 방법2. on 메소드를 이용하는 방법</h3>
     <pre>
@@ -45,7 +47,7 @@
 
     <h4 id="test2">마우스 클릭 및 올려보세요.</h4>
     <script>
-        $(function(){
+        $(function () {
             // $("#test2").on("click",function(){
             //     $(this).css("background", "orangered").text("클릭됨");
             // });
@@ -79,19 +81,19 @@
     </div>
 
     <script>
-        $(function(){
-            $("#wrap h4").on("click", function(){
+        $(function () {
+            $("#wrap h4").on("click", function () {
 
             });
 
-            $("#wrap").on("click", "h4", function(){
+            $("#wrap").on("click", "h4", function () {
                 alert("클릭되었습니다.");
                 $(this).html("하이");
             });
 
-            $(document).on("click","h4, h5", function(){
+            $(document).on("click", "h4, h5", function () {
                 // $(document) : 이 문서상의 요소들중 모든 h4, h5에 대해 이벤트 발생시
-                $(this).css("color","pink");
+                $(this).css("color", "pink");
             });
         });
     </script>
@@ -104,23 +106,23 @@
     </div>
 
     <script>
-        $(function(){
+        $(function () {
             // 방법1. 이벤트 메소드 => 동적으로 만들어진 요소에 이벤트 적용이 안된다.
             // $("#wrap2>h6").click(function(){
             //     $("#wrap2").append("<h6>클릭으로 인해 동적으로 만들어진 요소</h6>")
             // });
-            
+
             // 방법2. on메소드 => 동적으로 만들어진 요소에 이벤트 적용이 안된다.
             // $("#wrap2>h6").on("click",function(){
             //     $("#wrap2").append("<h6>클릭으로 인해 동적으로 만들어진 요소</h6>");
             // });
-            
+
             // 방법3
             // $("#wrap2").on("click","h6",function(){
             //     $("#wrap2").append("<h6>클릭으로 인해 동적으로 만들어진 요소</h6>");
             // });
             // 방법3 -> h6태그에 class추가 후 실행
-            $(document).on("click",".clicktest",function(){
+            $(document).on("click", ".clicktest", function () {
                 $("#wrap2").append("<h6 class='clicktest'>클릭으로 인해 동적으로 만들어진 요소</h6>");
             });
         });
@@ -132,15 +134,15 @@
         이벤트를 딱 한번만 연결할 때 사용<br>
 
         $("선택자").one("이벤트명", function(){ <br>
-            이벤트 발생시 실행할 내용 <br>
+        이벤트 발생시 실행할 내용 <br>
         });
     </p>
 
     <h6 id="test3">단 한번만 실행할 것</h6>
-    
+
     <script>
-        $(function(){
-            $("#test3").one("click",function(){
+        $(function () {
+            $("#test3").one("click", function () {
                 alert("처음 한번만 실행");
             });
         });
@@ -151,22 +153,22 @@
     <h3>* 키보드 관련 이벤트</h3>
     <p>
         - keydown / keypress : 키가 눌려질때 발생하는 이벤트<br>
-          keydown : 키보드의 모든 키가 눌려질 때 발생<br>
-          kdypress : 키보드의 펑션키, 기능키, 한글키를 제외한 나머지키가 눌려질 때 발생됨<br><br>
+        keydown : 키보드의 모든 키가 눌려질 때 발생<br>
+        kdypress : 키보드의 펑션키, 기능키, 한글키를 제외한 나머지키가 눌려질 때 발생됨<br><br>
 
         - keyup : 키가 때어질때 발생하는 이벤트
     </p>
 
     <input type="text" id="test4">
     <script>
-        $(function(){
+        $(function () {
             // $("#test4").keydown(function(){
             //     console.log($(this).val().length);
             // });
             // $("#test4").keypress(function(){
             //     console.log($(this).val().length);
             // });
-            $("#test4").keyup(function(){
+            $("#test4").keyup(function () {
                 console.log($(this).val());
             });
         });
@@ -182,11 +184,24 @@
     </div>
 
     <script>
-        $(function(){
-            $("#content").keyup(function(){
+        $(function () {
+            $("#content").keyup(function () {
                 $("#count").html($(this).val().length);
             });
         });
     </script>
+
+    <br>
+    150자 내로 작성하시오 <br>
+    <textarea id="content1" cols="30" rows="10" style="resize:none" maxlength="150"></textarea><br>
+    <span id="count1">0</span>/ 150
+    <script>
+        $(function(){
+            $("#content1").keyup(function(){
+                $("#count1").html($("#content1").val().length);
+            });
+        });
+    </script>
 </body>
+
 </html>
