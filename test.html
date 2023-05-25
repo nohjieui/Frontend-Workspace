@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(198, 229, 240);
+            padding: 30px 100px;
+            color: f(CCE5FF);
+        }
+        .area{
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border: 1px solid lightgray;
+            background: rgb(236, 236, 236);
+            padding: 50px 20px;
+        }
+        table{width: 100%;}
+        th{text-align: left;}
+
+        input{
+            padding: 10px 0;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid black;
+            border-bottom-style: dashed;
+            background: none;
+        }
+        button{
+            width: 100%;
+            padding: 20px;
+            background: rgb(191, 219, 169);
+            border: 1px solid rgb(172, 206, 147);
+        }
+        .div{
+            font-size: 14px;
+            color: red;
+        }
+
+        th, button{font-size: 16px;}
+    </style>
+</head>
+<body>
+     <div class="area">
+         <form action="test.do">
+            <table>
+                <tr>
+                    <th>아이디</th>
+                    <td>
+                        <input type="text" id="userId">
+                        
+                        <div class="div" id="idBox"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>패스워드</th>
+                    <td>
+                        <input type="password">
+                    
+                        <div id="userPwd"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>패스워드 확인</th>
+                    <td><input type="password"></td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td>
+                        <input type="text">
+                        <br>
+                        <input type="text">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <div id="btn">
+                <button type="submit">가 입</button>
+            </div>
+        </form>
+     </div>
+     <script>
+        $(function(){
+            $("#userId").blur(function(){
+                if($(this).val() == ""){
+
+                    $("#idBox").html("아이디를 입력해주세요");
+                }
+            });
+        });
+
+     </script>
+</body>
+</html>

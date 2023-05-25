@@ -6,7 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #area{
+        border: 1px solid gray;
+        padding: 20px;
+    }
+    .lb{
+        font-size: 12px;
+        color: gray;
+    }
+</style>
 <body>
-    
+    <form action="insert.me" id="area">
+        * 아이디 : 
+        <input type="text" id="userId" name="userId" required><br>
+        <label class="lb">첫글자는 반드시 영문자로, 그리고 영문자, 숫자를 포함하여 총 4~12자로 입력하시오.</label>
+        <br><br>
+        * 비밀번호 : 
+        <input type="password" id="userPwd1" name="userPwd1" required><br>
+        <label class="lb">영문자, 숫자, 특수문자(!@#$%^)로 총 8~15글자로 입력하시오.</label>
+        <br><br>
+        * 비밀번호 확인 : 
+        <input type="password" id="userPwd2" name="userPwd2" required><br>
+        <label class="lb">위의 비밀번호와 일치하게 입력하시오.</label>
+        <br><br>
+        * 이름 : 
+        <input type="text" id="userName" name="userName" required><br>
+        <label class="lb">한글로만 이루어져야하며 2글자 이상으로 입력하시오.</label>
+        <br><br>
+        * 이메일 : 
+        <input type="text" id="email" name="email"><br>
+        <label class="lb">이메일 형식에 맞춰서 입력하시오.</label>
+        <br><br>
+        * 취미 : 
+        <input type="text" id="hobby" name="hobby" placeholder="축구, 농구, 야구, 독서 등" list="hobbylist"><br>
+        <datalist id="hobbylist">
+            <option value="soccer">축구</option>
+            <option value="basketball">농구</option>
+            <option value="baseball">야구</option>
+            <option value="reac">독서</option>
+        </datalist>
+        <br>
+        * 거주지 : 
+        <select name="address" id="address">
+            <option value="서울">서울</option>
+            <option value="경기">경기</option>
+            <option value="인천">인천</option>
+            <option value="부산">부산</option>
+        </select>
+        
+        <br><br>
+        <input type="submit" value="회원가입" onclick="return validate();">
+        <input type="reset" value="취소">
+    </form>
+
+    <script>
+        function validate(){
+            let userId = document.getElementById("userId");
+            let userPwd1 = document.getElementById("userPwd1");
+            let userPwd2 = document.getElementById("userPwd2");
+            let userName = document.getElementById("userName");
+            let email = document.getElementById("email");
+
+            let regId = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
+            if(!regId.test(userId.value)){
+                alert("유효한 아이디가 아닙니다. 다시 입력해주세요");
+                userId.value = "";
+                userid.select();
+                return false;
+            }
+
+            let regPwd = /^[a-z0-9!@#$%^]{8,15}$/i;
+            if(!regPwd.test(userPwd1.value)){
+                alert("유효한 비밀번호가 아닙니다.");
+                userPwd1.value = "";
+                userPwd1.select();
+                return false;
+            }
+
+            if(userPwd1.value != userPwd2.value){
+                alert("비밀번호가 일치하지 않습니다.");
+                userPwd2.value = "";
+                userPwd2.select();
+                return false;
+            }
+
+            let regName = /[ㄱ-ㅎ가-힣]{2,}/;
+            if(!regName.test(userName.value)){
+                alert("유효한 이름이 아닙니다.");
+                userName.value = "";
+                userName.select();
+                return false;
+            }  
+        }
+    </script>
 </body>
 </html>
